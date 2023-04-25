@@ -10,6 +10,7 @@ import './vendor/glightbox/css/glightbox.css'
 import './vendor/glightbox/css/plyr.css'
 import './vendor/boxicons/css/animations.css'
 import './vendor/boxicons/css/boxicons.css'
+import './vendor/bootstrap-icons/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 

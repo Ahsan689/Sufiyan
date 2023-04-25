@@ -6,6 +6,7 @@ import {Helmet} from "react-helmet";
 import Isotope from 'isotope-layout';
 import GLightbox from 'glightbox';
 import Swiper from 'swiper';
+import './css/style.css'
 import 'swiper/swiper-bundle.css';
 
 
@@ -14,19 +15,96 @@ import 'swiper/swiper-bundle.css';
 import useExternalScripts from './ExternalScript';
 
 function App() {
-  useEffect(() => {
-     /**
-   * Easy selector helper function
-   */
-   const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
 
+   
+  
+  useEffect(() => {
+
+
+       /**
+    * Easy selector helper function
+    */
+       const select = (el, all = false) => {
+        el = el.trim()
+        if (all) {
+          return [...document.querySelectorAll(el)]
+        } else {
+          return document.querySelector(el)
+        }
+        }
+    
+        /**
+        * Easy event listener function
+        */
+        const on = (type, el, listener, all = false) => {
+          let selectEl = select(el, all)
+          if (selectEl) {
+            if (all) {
+              selectEl.forEach(e => e.addEventListener(type, listener))
+            } else {
+              selectEl.addEventListener(type, listener)
+            }
+          }
+        }
+           /**
+       * Scrolls to an element with header offset
+       */
+           const scrollto = (el) => {
+            let header = select('#header')
+            let offset = header.offsetHeight
+        
+            if (!header.classList.contains('header-scrolled')) {
+              offset -= 20
+            }
+        
+            let elementPos = select(el).offsetTop
+            window.scrollTo({
+              top: elementPos - offset,
+              behavior: 'smooth'
+            })
+          }
+    
+            /**
+         * Mobile nav toggle
+         */
+            on('click', '.mobile-nav-toggle', function(e) {
+              console.log( select('#navbar').classList,"navbar.classList");
+              select('#navbar').classList.add('navbar-mobile')
+              this.classList.add('bi-list')
+              this.classList.add('bi-x')
+            })
+        
+              /**
+           * Mobile nav dropdowns activate
+           */
+          on('click', '.navbar .dropdown > a', function(e) {
+            if (select('#navbar').classList.contains('navbar-mobile')) {
+              e.preventDefault()
+              this.nextElementSibling.classList.add('dropdown-active')
+            }
+          }, true)
+        
+        
+           /**
+           * Scrool with ofset on links with a class name .scrollto
+           */
+           on('click', '.scrollto', function(e) {
+            if (select(this.hash)) {
+              e.preventDefault()
+        
+              let navbar = select('#navbar')
+              console.log(navbar,"navbar.classList");
+              if (navbar.classList.contains('navbar-mobile')) {
+                navbar.classList.remove('navbar-mobile')
+                let navbarToggle = select('.mobile-nav-toggle')
+                navbarToggle.classList.toggle('bi-list')
+                navbarToggle.classList.toggle('bi-x')
+              }
+              scrollto(this.hash)
+            }
+          }, true)
+ 
+ 
     /**
    * Testimonials slider
    */
@@ -62,12 +140,15 @@ function App() {
         }
       });
 
+
   /**
    * Easy on scroll event listener 
    */
    const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
+
+  
    /**
    * Toggle .header-scrolled class to #header when page is scrolled
    */
@@ -106,19 +187,7 @@ function App() {
   window.addEventListener('load', navbarlinksActive)
   onscroll(document, navbarlinksActive)
 
-    /**
-   * Easy event listener function
-   */
-    const on = (type, el, listener, all = false) => {
-      let selectEl = select(el, all)
-      if (selectEl) {
-        if (all) {
-          selectEl.forEach(e => e.addEventListener(type, listener))
-        } else {
-          selectEl.addEventListener(type, listener)
-        }
-      }
-    }
+  
 
 
   /**
@@ -149,22 +218,29 @@ function App() {
 
   });
 
+ 
     /**
    * Initiate portfolio lightbox 
    */
     const portfolioLightbox = GLightbox({
       selector: '.portfolio-lightbox'
     });
-  
+
+    let backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
 
 
   }, []);
-//  let scroll =  window.scroll({
-//     top: 30,
-//     behavior: 'smooth'
-//   });
-//   console.log(scroll);
-//   useExternalScripts('./js/main.js')
 
  
   return (
