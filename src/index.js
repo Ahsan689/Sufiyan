@@ -1,8 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+// import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './css/style.css'
+import './vendor/bootstrap/css/bootstrap-grid.css'
+import './vendor/boxicons/css/transformations.css'
+import './vendor/glightbox/css/glightbox.css'
+import './vendor/glightbox/css/plyr.css'
+import './vendor/boxicons/css/animations.css'
+import './vendor/boxicons/css/boxicons.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
