@@ -298,8 +298,8 @@ function App() {
     <nav id="navbar" className="navbar" >
       <ul >
         <li><a style={{marginRight:50}} className="nav-link scrollto active" href="#hero"><img width={50} height={50} src="/assets/img/HOME.png" alt/></a></li>
-        <li><a style={{marginRight:50}} className="nav-link scrollto" href="#about"><img  width={50} height={50} src="/assets/img/about us.png" alt/></a></li>
-        <li><a style={{marginRight:50}} className="nav-link scrollto" href="#services"><img  width={48} height={48} src="/assets/img/services.png" alt/></a></li>
+        <li><a style={{marginRight:50}} className="nav-link scrollto" href="#about"><img  width={50} height={50} src="/assets/img/ABOUT US.png" alt/></a></li>
+        <li><a style={{marginRight:50}} className="nav-link scrollto" href="#services"><img  width={48} height={48} src="/assets/img/SERVICES.png" alt/></a></li>
         <li><a style={{marginRight:50}} className="nav-link scrollto " href="#portfolio"><img width={50} height={50} src="/assets/img/portfolio.png" alt/></a></li>
         {/* <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down" /></a>
           <ul>
