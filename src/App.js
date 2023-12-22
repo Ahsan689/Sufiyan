@@ -295,14 +295,13 @@ function App() {
      <script src = "./vendor/bootstrap/js/bootstrap.js" type = "text/javascript" />
   </Helmet> */}
   <header id="header" className="fixed-top d-flex justify-content-center align-items-center header-transparent">
-    <nav id="navbar" className="navbar">
-      <ul>
-        <li><a className="nav-link scrollto active" href="#hero">Home</a></li>
-        <li><a className="nav-link scrollto" href="#about">About</a></li>
-        <li><a className="nav-link scrollto" href="#resume">Resume</a></li>
-        <li><a className="nav-link scrollto" href="#services">Services</a></li>
-        <li><a className="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-        <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down" /></a>
+    <nav id="navbar" className="navbar" >
+      <ul >
+        <li><a style={{marginRight:50}} className="nav-link scrollto active" href="#hero"><img width={50} height={50} src="/assets/img/HOME.png" alt/></a></li>
+        <li><a style={{marginRight:50}} className="nav-link scrollto" href="#about"><img  width={50} height={50} src="/assets/img/ABOUT US.png" alt/></a></li>
+        <li><a style={{marginRight:50}} className="nav-link scrollto" href="#services"><img  width={48} height={48} src="/assets/img/SERVICES.png" alt/></a></li>
+        <li><a style={{marginRight:50}} className="nav-link scrollto " href="#portfolio"><img width={50} height={50} src="/assets/img/portfolio.png" alt/></a></li>
+        {/* <li className="dropdown"><a href="#"><span>Drop Down</span> <i className="bi bi-chevron-down" /></a>
           <ul>
             <li><a href="#">Drop Down 1</a></li>
             <li className="dropdown"><a href="#"><span>Deep Drop Down</span> <i className="bi bi-chevron-right" /></a>
@@ -318,8 +317,8 @@ function App() {
             <li><a href="#">Drop Down 3</a></li>
             <li><a href="#">Drop Down 4</a></li>
           </ul>
-        </li>
-        <li><a className="nav-link scrollto" href="#contact">Contact</a></li>
+        </li> */}
+        <li><a className="nav-link scrollto" href="#contact"><img width={50} height={50} src="/assets/img/CONTACT US.png" alt/></a></li>
       </ul>
       <i className="bi bi-list mobile-nav-toggle" />
     </nav>{/* .navbar */}
@@ -334,20 +333,20 @@ function App() {
       <a href="#about" className="btn-scroll scrollto" title="Scroll Down"><i className="bx bx-chevron-down" /></a>
     </div>
   </section>
-  <>
+  <div style={{justifyContent:'center', margin:"5%"}}>
 
-<img width={600} height={600} src="https://picsum.photos/600/600?random=1" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=2" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=3" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=4" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=5" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=6" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=7" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=8" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=9" alt className="skewElem" />
-<img width={600} height={600} src="https://picsum.photos/600/600?random=10" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/01-26 (1).jpg" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/02-28 (1).jpg" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/04-23 (1).jpg" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/03.png" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/04.png" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/05.png" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/VIEW 01.jpg" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/VIEW 02.jpg" alt className="skewElem" />
+<img width={400} height={400} src="/assets/img/VIEW 03.jpg" alt className="skewElem" />
+{/* <img width={400} height={400} src="/assets/img/" alt className="skewElem" /> */}
 
-</>
+</div>
   {/* End Hero */}
   <main id="main">
     {/* ======= About Me Section ======= */}
